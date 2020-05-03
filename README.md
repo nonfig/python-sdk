@@ -8,8 +8,8 @@ The open source SDK will ease the integration with your platform if you are runn
 from api import Nonfig
 
 options = {
-  "app_id": "c1e8293f-58be-4c55-9db4-b1c39cbc1dcb",
-  "app_secret": "XuuhXorEZqeRTJjHumGCgnPuZMdQgVvu",
+  "app_id": "c1e8293f-58be-4c55-9db4-b1c39cbc1dcb", # Replace with your App ID
+  "app_secret": "XuuhXorEZqeRTJjHumGCgnPuZMdQgVvu", # Replace with your App Secret
   "debug": True,
   "cache_enable": True,
   "cache_ttl": 60
