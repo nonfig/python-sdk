@@ -1,11 +1,15 @@
+[![PyPI version](https://badge.fury.io/py/nonfig-sdk.svg)](https://badge.fury.io/py/nonfig-sdk)
+
 # Python SDK
 
 The open source SDK will ease the integration with your platform if you are running on Python. For more information about the documentation, please check out [docs.nonfig.com](https://docs.nonfig.com)
 
+The package is already published (https://pypi.org/project/nonfig-sdk/)[https://pypi.org/project/nonfig-sdk/]
+
 ### Example code
 
 ```python
-from api import Nonfig
+from nonfig.sdk import Nonfig
 
 options = {
   "app_id": "c1e8293f-58be-4c55-9db4-b1c39cbc1dcb", # Replace with your App ID
