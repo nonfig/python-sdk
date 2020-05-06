@@ -4,7 +4,7 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
-  build-and-test:
+  build:
     docker:
       - image: circleci/python:3.7.7
     steps:
@@ -18,14 +18,10 @@ jobs:
           name: Activate venv
       - run:
           command: |
-            pip install -r requirements.txt
-          name: Install dependencies
-      - run:
-          command: |
             pylint ./nonfig
           name: Run Linter
 
 workflows:
   main:
     jobs:
-      - build-and-test
+      - build
