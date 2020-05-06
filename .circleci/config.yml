@@ -1,0 +1,27 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.7.7
+    steps:
+      - checkout
+      - python/load-cache
+      - python/install-deps
+      - python/save-cache
+      - run:
+          command: |
+            source apis/bin/activate
+          name: Activate venv
+      - run:
+          command: |
+            pylint ./nonfig
+          name: Run Linter
+
+workflows:
+  main:
+    jobs:
+      - build
