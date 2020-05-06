@@ -12,8 +12,8 @@ jobs:
       - python/install-deps
       - python/save-cache
       - run:
-          command: ./manage.py test
-          name: Test
+          command: pylint ./nonfig
+          name: Code Linting
 
 workflows:
   main:
