@@ -1,4 +1,6 @@
 [![PyPI version](https://badge.fury.io/py/nonfig-sdk.svg)](https://badge.fury.io/py/nonfig-sdk)
+[![CircleCI](https://circleci.com/gh/nonfig/python-sdk/tree/master.svg?style=shield)](https://circleci.com/gh/nonfig/python-sdk/tree/master.svg?style=svg)
+
 
 # Python SDK
 
