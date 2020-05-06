@@ -5,15 +5,25 @@ orbs:
 
 jobs:
   build-and-test:
-    executor: python/default
+    docker:
+      - image: circleci/python:3.7.7
     steps:
       - checkout
       - python/load-cache
       - python/install-deps
       - python/save-cache
       - run:
-          command: pylint ./nonfig
-          name: Code Linting
+          command: |
+            source apis/bin/activate
+          name: Activate venv
+      - run:
+          command: |
+            pip install -r requirements.txt
+          name: Install dependencies
+      - run:
+          command: |
+            pylint ./nonfig
+          name: Run Linter
 
 workflows:
   main:
