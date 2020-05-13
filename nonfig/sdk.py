@@ -1,24 +1,26 @@
 """Integrate Nonfig using SDK"""
 import requests
+from nonfig.constants import BASE_URL
 
 
 class Nonfig:
     """Initialize API instance to fetch data from Nonfig"""
-    base_url = "https://beta.nonfig.com/api/v1"
+    base_url = BASE_URL
     api_url = "{}/configurations".format(base_url)
 
     def __init__(self, options: dict):
-        self.app_id = options.app_id
-        self.app_secret = options.app_secret
-        self.debug = options.debug
-        self.cache_enable = options.cache_enable
-        self.cache_ttl = options.cache_ttl
+        self.app_id = options['app_id']
+        self.app_secret = options['app_secret']
+        self.debug = options['debug'] or False
+        self.cache_enable = options['cache_enable'] or False
+        self.cache_ttl = options['cache_ttl']
 
     def get_headers(self):
         """Retrieve HTTP Headers for the API Request"""
         return {
-            'user-agent': "nonfig/pythong-sdk/1.0",
-            'authorization': "{}:{}".format(self.app_id, self.app_secret)
+            'user-agent': "Nonfig/v1 PythonBindings/1.0",
+            'authorization': "Bearer {}:{}".format(self.app_id, self.app_secret),
+            'content-type': 'application/json'
         }
 
     def find_by_id(self, configuration_id: str) -> dict:
