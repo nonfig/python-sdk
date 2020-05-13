@@ -18,7 +18,7 @@ jobs:
           name: Activate venv
       - run:
           command: |
-            pylint ./nonfig
+            pylint ./nonfig --disable=missing-docstring
           name: Run Linter
 
 workflows:

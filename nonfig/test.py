@@ -7,7 +7,7 @@ from nonfig.constants import BASE_URL
 class TestSDK(unittest.TestCase):
 
     def setUp(self):
-        self.defaultOps = {
+        self.default_options = {
             'app_id': "c1e8293f-58be-4c55-9db4-b1c39cbc1dcb",  # Replace with your App ID
             'app_secret': "XuuhXorEZqeRTJjHumGCgnPuZMdQgVvu",  # Replace with your App Secret
             'debug': True,
@@ -16,12 +16,13 @@ class TestSDK(unittest.TestCase):
         }
 
     @unittest.expectedFailure
-    def test_constructor_error(self):
+    @classmethod
+    def test_constructor_error(cls):
         options = {}
         Nonfig(options)
 
     def test_constructor_success(self):
-        options = self.defaultOps
+        options = self.default_options
         nonfig = Nonfig(options)
         self.assertEqual(nonfig.app_id, options['app_id'])
         self.assertEqual(nonfig.app_secret, options['app_secret'])
@@ -30,7 +31,7 @@ class TestSDK(unittest.TestCase):
         self.assertEqual(nonfig.cache_ttl, options['cache_ttl'])
 
     def test_get_headers_method(self):
-        options = self.defaultOps
+        options = self.default_options
         nonfig = Nonfig(options)
         headers = nonfig.get_headers()
         expected_agent_value = 'Nonfig/v1 PythonBindings/1.0'
@@ -43,7 +44,7 @@ class TestSDK(unittest.TestCase):
 
     @patch('nonfig.sdk.requests.get')
     def test_find_by_id_method(self, mock_requests):
-        options = self.defaultOps
+        options = self.default_options
         configuration_id = "__fake__"
         expect_url = "{}/configurations/id/{}".format(
             BASE_URL, configuration_id)
@@ -58,7 +59,7 @@ class TestSDK(unittest.TestCase):
 
     @patch('nonfig.sdk.requests.get')
     def test_find_by_name_method(self, mock_requests):
-        options = self.defaultOps
+        options = self.default_options
         name = "__fake__"
         expect_url = "{}/configurations/name/{}".format(
             BASE_URL, name)
@@ -73,7 +74,7 @@ class TestSDK(unittest.TestCase):
 
     @patch('nonfig.sdk.requests.get')
     def test_find_by_labels_method(self, mock_requests):
-        options = self.defaultOps
+        options = self.default_options
         labels = ["label:test"]
         expect_url = "{}/configurations/labels/{}".format(
             BASE_URL, ",".join(labels))
