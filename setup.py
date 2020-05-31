@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="nonfig-sdk",
-    version="0.0.2",
+    version="0.0.3",
     author="Nonfig",
     author_email="admin@nonfig.com",
     long_description=long_description,
