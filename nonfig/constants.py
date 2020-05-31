@@ -1,1 +1,1 @@
-BASE_URL = "https://beta.nonfig.com/api/v1"
+BASE_URL = "https://app.nonfig.com/api/v1"

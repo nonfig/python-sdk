@@ -6,7 +6,7 @@
 
 The open source SDK will ease the integration with your platform if you are running on Python. For more information about the documentation, please check out [docs.nonfig.com](https://docs.nonfig.com)
 
-The package is already published (https://pypi.org/project/nonfig-sdk/)[https://pypi.org/project/nonfig-sdk/]
+The package is already published [https://pypi.org/project/nonfig-sdk/](https://pypi.org/project/nonfig-sdk/)
 
 ### Example code
 
